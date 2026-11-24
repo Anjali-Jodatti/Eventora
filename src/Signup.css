@@ -1,0 +1,253 @@
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background:
+    radial-gradient(circle at top left, #e0e7ff 0, transparent 35%),
+    linear-gradient(135deg, #f8faff, #eef2ff);
+  color: #1e293b;
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 490px;
+  padding: 36px;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(30, 41, 59, 0.1);
+}
+
+.signup-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #3730a3;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.signup-brand-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #5146e5;
+  color: white;
+}
+
+.signup-heading {
+  margin: 28px 0;
+  text-align: center;
+}
+
+.signup-eyebrow {
+  color: #5146e5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.signup-heading h1 {
+  margin: 10px 0;
+  font-size: 30px;
+}
+
+.signup-heading > p:last-child {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.signup-form label {
+  margin-top: 5px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.signup-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 48px;
+  padding: 0 13px;
+  border: 1px solid #dbe2f0;
+  border-radius: 10px;
+  color: #64748b;
+  background: #fff;
+}
+
+.signup-input-wrap:focus-within {
+  border-color: #5146e5;
+  box-shadow: 0 0 0 3px rgba(81, 70, 229, 0.1);
+}
+
+.signup-input-wrap input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #1e293b;
+  font: inherit;
+  font-size: 14px;
+}
+
+.signup-input-wrap input::placeholder {
+  color: #94a3b8;
+}
+
+.signup-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 49px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #5146e5;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.signup-submit:hover {
+  background: #4338ca;
+}
+
+.signup-error,
+.signup-success {
+  margin: 5px 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.signup-error {
+  color: #b91c1c;
+}
+
+.signup-success {
+  color: #15803d;
+}
+
+.signup-login-text {
+  margin-top: 24px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.signup-login-text a,
+.signup-login-text button {
+  border: none;
+  padding: 0;
+  background: transparent;
+  color: #5146e5;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.signup-footer {
+  margin-top: 25px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 480px) {
+  .signup-card {
+    padding: 25px 20px;
+  }
+
+  .signup-heading h1 {
+    font-size: 26px;
+  }
+}
+
+.password-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+.password-toggle:hover {
+  color: #2563eb;
+}
+
+.signup-topbar {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.signup-topbar .signup-brand {
+  margin: 0;
+}
+
+.signup-dashboard-button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.signup-dashboard-button:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 600px) {
+  .signup-topbar {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+  }
+
+  .signup-dashboard-button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+.signup-page {
+  min-height: 100vh;
+  background-image:
+    linear-gradient(
+      rgba(10, 20, 45, 0.55),
+      rgba(10, 20, 45, 0.55)
+    ),
+    url("./assets/event-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

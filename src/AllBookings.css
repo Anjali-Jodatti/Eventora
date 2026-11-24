@@ -1,0 +1,501 @@
+/* Eventora - Booking Management */
+.admin-bookings-page {
+  min-height: 100vh;
+  padding: 32px clamp(16px, 4vw, 56px);
+  box-sizing: border-box;
+  color: #1d2945;
+  background: linear-gradient(135deg, #f3f6ff 0%, #eef2ff 48%, #f8faff 100%);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.admin-bookings-page * {
+  box-sizing: border-box;
+}
+
+.ab-page-header,
+.ab-list-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.ab-page-header {
+  max-width: 1500px;
+  margin: 0 auto 28px;
+}
+
+.ab-eyebrow {
+  margin: 0 0 8px;
+  color: #7164df;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.ab-page-header h1 {
+  margin: 0;
+  color: #192643;
+  font-size: clamp(27px, 3vw, 36px);
+  letter-spacing: -1px;
+  font-weight: 800;
+}
+
+.ab-subtitle {
+  margin: 9px 0 0;
+  color: #78839c;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ab-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 11px;
+  padding: 12px 17px;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: transform 0.18s ease;
+}
+
+.ab-button:hover {
+  transform: translateY(-1px);
+}
+
+.ab-button-light {
+  color: #34415e;
+  background: #fff;
+  border: 1px solid #e0e6f1;
+  box-shadow: 0 4px 14px #24345a08;
+}
+
+.ab-stats-grid {
+  max-width: 1500px;
+  margin: 0 auto 22px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ab-stat-card {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 14px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e8edf7;
+  border-radius: 18px;
+  padding: 21px;
+  box-shadow: 0 8px 25px #26365b08;
+}
+
+.ab-stat-icon {
+  grid-row: 1 / 4;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.ab-icon-purple {
+  background: #efedff;
+  color: #6a5be0;
+}
+
+.ab-icon-green {
+  background: #e7f9f0;
+  color: #219567;
+}
+
+.ab-icon-red {
+  background: #fff0f1;
+  color: #d64c60;
+}
+
+.ab-stat-card p {
+  margin: 0 0 4px;
+  color: #7b86a0;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.ab-stat-card strong {
+  color: #1c2b4a;
+  font-size: 27px;
+  line-height: 1.2;
+}
+
+.ab-stat-card small {
+  margin-top: 5px;
+  color: #8993a9;
+  font-size: 11px;
+}
+
+.ab-green-text {
+  color: #219567 !important;
+}
+
+.ab-red-text {
+  color: #d64c60 !important;
+}
+
+.ab-panel {
+  max-width: 1500px;
+  min-width: 0;
+  margin: 0 auto 22px;
+  padding: clamp(18px, 2.5vw, 28px);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #e6ebf5;
+  border-radius: 20px;
+  box-shadow: 0 9px 30px #26365b08;
+}
+
+.ab-list-heading {
+  margin-bottom: 21px;
+}
+
+.ab-panel h2 {
+  margin: 0;
+  color: #1e2b49;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.ab-list-heading p {
+  margin: 7px 0 0;
+  color: #8993a9;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.ab-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ab-search,
+.ab-filter {
+  min-width: 0;
+  padding: 12px 13px;
+  border: 1px solid #dfe5f0;
+  border-radius: 10px;
+  background: #fbfcff;
+  color: #263450;
+  font: inherit;
+  font-size: 13px;
+}
+
+.ab-search {
+  width: min(340px, 100%);
+}
+
+.ab-filter {
+  min-width: 145px;
+}
+
+.ab-search:focus,
+.ab-filter:focus {
+  outline: none;
+  border-color: #8d83f0;
+  box-shadow: 0 0 0 3px #8d83f01c;
+}
+
+.ab-table-wrap {
+  overflow-x: auto;
+  width: 100%;
+  border: 1px solid #edf0f7;
+  border-radius: 13px;
+}
+
+.ab-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.ab-table th {
+  padding: 14px 15px;
+  background: #f6f8fd;
+  color: #7b86a0;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 800;
+  border-bottom: 1px solid #e8edf6;
+  white-space: nowrap;
+}
+
+.ab-table td {
+  padding: 15px;
+  color: #485570;
+  font-size: 12px;
+  vertical-align: middle;
+  border-bottom: 1px solid #edf0f7;
+}
+
+.ab-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.ab-table tbody tr:hover {
+  background: #fafbff;
+}
+
+.ab-participant {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 180px;
+}
+
+.ab-avatar {
+  flex: 0 0 37px;
+  width: 37px;
+  height: 37px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #efedff;
+  color: #6657d8;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.ab-participant-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.ab-participant-details strong {
+  color: #253452;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.ab-participant-details small {
+  color: #8993a9;
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+.ab-program-title {
+  display: block;
+  color: #253452;
+  font-weight: 800;
+  line-height: 1.5;
+  min-width: 150px;
+}
+
+.ab-secondary-text {
+  display: block;
+  margin-top: 5px;
+  color: #8993a9;
+  font-size: 10px;
+}
+
+.ab-booking-id {
+  padding: 5px 7px;
+  border-radius: 7px;
+  background: #f2f4fa;
+  color: #6f7a93;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.ab-price {
+  color: #253452 !important;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.ab-status {
+  display: inline-block;
+  padding: 7px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.ab-status-confirmed {
+  background: #e7f9f0;
+  color: #198657;
+}
+
+.ab-status-cancelled {
+  background: #fff0f1;
+  color: #cf4057;
+}
+
+.ab-status-other {
+  background: #fff6df;
+  color: #a66a0b;
+}
+
+.ab-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 48px 15px;
+  text-align: center;
+  color: #8993a9;
+  font-size: 13px;
+}
+
+.ab-empty-state strong {
+  color: #34415e;
+  font-size: 15px;
+}
+
+.ab-empty-state p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.ab-empty-icon {
+  font-size: 30px;
+  color: #8d83f0;
+}
+
+.ab-loader {
+  width: 27px;
+  height: 27px;
+  border: 3px solid #e5e2ff;
+  border-top-color: #7164df;
+  border-radius: 50%;
+  animation: ab-spin 0.8s linear infinite;
+}
+
+@keyframes ab-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ab-alert-error {
+  padding: 16px;
+  border-radius: 12px;
+  background: #fff0f1;
+  color: #c53e53;
+  border: 1px solid #ffdbdf;
+  font-size: 13px;
+}
+
+.ab-alert-error p {
+  margin-bottom: 0;
+  overflow-wrap: anywhere;
+}
+
+.ab-footer {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 8px 0 0;
+  text-align: center;
+  color: #929bb0;
+  font-size: 11px;
+}
+
+@media (max-width: 760px) {
+  .admin-bookings-page {
+    padding: 22px 14px;
+  }
+
+  .ab-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ab-stat-card {
+    padding: 17px;
+  }
+
+  .ab-list-heading {
+    align-items: stretch;
+  }
+
+  .ab-controls {
+    flex-direction: column;
+  }
+
+  .ab-search,
+  .ab-filter {
+    width: 100%;
+  }
+}
+
+/* Blue Back to Dashboard button */
+.ab-page-header > button.ap-button-light,
+.ab-page-header > button.ab-button-light {
+  background: #2563eb;
+  color: #ffffff;
+  border: 1px solid #2563eb;
+}
+
+.ab-page-header > button.ap-button-light:hover,
+.ab-page-header > button.ab-button-light:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+/* Center the search box and filter */
+.ab-list-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ab-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.ab-search {
+  width: 100%;
+  max-width: 420px;
+}
+
+.ab-filter {
+  min-width: 150px;
+}
+
+.ab-cancel-button {
+  border: none;
+  border-radius: 7px;
+  padding: 8px 14px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.ab-cancel-button:hover {
+  background: #fecaca;
+}
+
+.ab-cancel-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ab-action-disabled {
+  color: #9ca3af;
+}
